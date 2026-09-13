@@ -13,6 +13,17 @@ Windows 11 x64 build 10.0.26200 / Python 3.12.10 / lxml 6.1.3 / pywin32 312 / Py
 - Excel로 만든 합성 XLS: pywin32 변환 경로로 XLSX 변환·열기 성공, 값과 병합 셀 유지 확인.
 - Hancom COM `HWPFrame.HwpObject`가 등록되어 있지 않아 실제 HWP 변환과 HWPX 레이아웃은 미검증.
 
+### GitHub 푸시·CI·릴리스 (2026-09-13)
+
+- main 소스 커밋 `e758d9acfa053e96d6333bd981371735b8af862e`를 강제 푸시 없이 반영.
+- GitHub Actions 실행 34745009276(run #1) 성공. 테스트·빌드·패키징된 GUI 스모크·Artifact 업로드·미리보기 릴리스 단계 모두 성공.
+- 미리보기 릴리스 `v0.1.0-build.1.1`: https://github.com/h19h29-design/rename/releases/tag/v0.1.0-build.1.1
+- 다운로드 ZIP: https://github.com/h19h29-design/rename/releases/download/v0.1.0-build.1.1/RENAME-Windows-x64.zip
+- 릴리스 ZIP SHA256 `d8a5150d9f12fc74b5f6ef04b779ffbb8b7f947f7887f15cce59b1272fcdbcff` — 다운로드한 ZIP, `SHA256SUMS.txt`, GitHub 자산 digest와 일치.
+- 다운로드한 릴리스 EXE의 자체 테스트와 GUI 스모크는 종료 코드 0.
+- 로컬 빌드 ZIP SHA256 `cc2f9a95c550c0d5eb4bd283118c12f1f1922da12b808a4631958ba86ac28fe5`. 로컬과 GitHub 해시는 별도 빌드라 다르며, 다운로드에는 릴리스 해시를 사용.
+- Artifact ID 10313228795 존재, 2026-10-13 만료. 사용자 안내에는 릴리스 URL을 우선 사용.
+
 ### 테스트 범위 (Linux / Python 3.13 / lxml 6.1.1 / Tk 8.6 / Xvfb 포함)
 
 - 규칙 테스트: 이름·주민번호·생년월일·금액·일반 날짜, 날짜 유효성, 우선순위, 옵션 해제, 반복 치환.
@@ -33,4 +44,4 @@ Windows 11 x64 build 10.0.26200 / Python 3.12.10 / lxml 6.1.3 / pywin32 312 / Py
 4. 이미지·도장·서명·스캔본과 자동 탐지 범위 밖 정보 직접 확인.
 5. Windows 10, 다른 Office/한글 버전, 기관 정책 환경에서 재현 확인.
 
-GitHub 소스 푸시·Actions·릴리스는 아직 완료하지 않았습니다. Windows CI가 성공해도 Excel / Hancom 설치 연동 테스트가 자동으로 완료되는 것은 아닙니다. GitHub Windows 러너에는 기관의 실제 Office 환경이 없습니다.
+main 소스 푸시·Actions·미리보기 릴리스는 완료했습니다. 다만 Windows CI가 성공해도 Excel / Hancom 설치 연동 테스트가 자동으로 완료되는 것은 아닙니다. GitHub Windows 러너에는 기관의 실제 Office 환경이 없습니다.

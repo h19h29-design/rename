@@ -1,6 +1,8 @@
 ﻿RE:NAME 문서 개인정보 변환기 / 초기 버전 0.1.0
 
 이 ZIP은 소스 패키지입니다. 이미 빌드된 EXE는 들어 있지 않습니다.
+빌드된 EXE는 릴리스 v0.1.0-build.1.1에서 받을 수 있습니다.
+https://github.com/h19h29-design/rename/releases/tag/v0.1.0-build.1.1
 
 [지금 Windows에서 실행]
 1. Python 3.12 64비트를 python.org 공식 배포본으로 설치합니다.
@@ -33,5 +35,9 @@ HWP: HWPX 저장을 지원하는 설치된 한글을 통해 HWPX로 변환.
 
 [검증/저장소]
 2026-09-13 Windows 11 x64에서 자동 테스트 39개 통과, 1개 건너뜀. Excel 16.0으로 XLSX 처리·저장·재열기와 XLS→XLSX 변환 경로 확인. 한컴 COM이 등록되지 않아 실제 HWP 변환·HWPX 레이아웃은 미검증.
-GitHub 소스 푸시·Actions·릴리스는 아직 완료하지 않았습니다. 초기 .gitignore 커밋만 원격에 반영된 상태입니다.
-전체 코드는 이 ZIP에 있습니다. docs/GITHUB_UPLOAD.md와 docs/CODEX_HANDOFF.md를 참고하세요.
+소스는 main(커밋 e758d9acfa053e96d6333bd981371735b8af862e)에 강제 푸시 없이 반영되었고, GitHub Actions 실행 34745009276(run #1)이 성공했습니다. 미리보기 릴리스 v0.1.0-build.1.1을 게시했습니다.
+릴리스: https://github.com/h19h29-design/rename/releases/tag/v0.1.0-build.1.1
+직접 ZIP: https://github.com/h19h29-design/rename/releases/download/v0.1.0-build.1.1/RENAME-Windows-x64.zip
+릴리스 ZIP SHA256: d8a5150d9f12fc74b5f6ef04b779ffbb8b7f947f7887f15cce59b1272fcdbcff (다운로드 ZIP·SHA256SUMS.txt·GitHub 자산 digest와 일치). 로컬 빌드 ZIP 해시와는 별도 빌드라 다르므로 다운로드에는 릴리스 해시를 사용하세요.
+Artifact 10313228795도 있으나 2026-10-13에 만료되므로 릴리스 URL을 우선 사용하세요.
+전체 코드는 main에 있습니다. docs/GITHUB_UPLOAD.md와 docs/CODEX_HANDOFF.md를 참고하세요.

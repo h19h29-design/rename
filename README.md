@@ -6,19 +6,24 @@
 
 ## 이번 전달본 상태
 
-제공하는 ZIP은 **전체 소스 패키지**이며 `.exe`는 포함하지 않습니다. 2026-09-13에 Windows 11 x64(10.0.26200) / Python 3.12.10 / lxml 6.1.3 / pywin32 312 / PyInstaller 6.22.3 환경에서 자동 테스트 **39 passed, 1 skipped**, 소스·패키징 실행 파일 GUI 스모크 테스트를 통과했고 `dist/RENAME-Windows-x64.zip` 로컬 포터블 ZIP을 생성했습니다. Excel 16.0에서 합성 XLSX를 처리·저장·재열기하고 XLS→XLSX 변환 경로를 확인했습니다. 한컴 COM(`HWPFrame.HwpObject`)이 등록되어 있지 않아 실제 HWP 변환과 HWPX 레이아웃은 미검증입니다. GitHub 소스 푸시·Actions·릴리스는 아직 완료하지 않았습니다. 기관 실기기·실제 업무 서식 검증은 여전히 필요합니다.
+전체 소스가 `main`에 반영되었고(소스 커밋 `e758d9acfa053e96d6333bd981371735b8af862e`, 강제 푸시 없이 푸시 성공), Windows 미리보기 릴리스 **v0.1.0-build.1.1**이 게시되었습니다. GitHub Actions 실행 34745009276(run #1)이 성공했고 테스트·빌드·패키징된 GUI 스모크·Artifact 업로드·미리보기 릴리스 단계가 모두 통과했습니다. 다운로드한 릴리스 EXE의 자체 테스트와 GUI 스모크는 종료 코드 0으로 통과했습니다. 릴리스 ZIP SHA256 `d8a5150d9f12fc74b5f6ef04b779ffbb8b7f947f7887f15cce59b1272fcdbcff`은 다운로드한 ZIP·`SHA256SUMS.txt`·GitHub 자산 digest와 일치합니다.
 
-지금 실행하려면 아래의 **소스에서 실행** 절차를 사용하세요. 직접 EXE를 만들려면 `BUILD_WINDOWS.cmd`를 실행합니다. GitHub 반영 방법과 Codex 인수인계는 `docs/GITHUB_UPLOAD.md`, `docs/CODEX_HANDOFF.md`에 있습니다.
+- 릴리스: https://github.com/h19h29-design/rename/releases/tag/v0.1.0-build.1.1
+- 직접 ZIP: https://github.com/h19h29-design/rename/releases/download/v0.1.0-build.1.1/RENAME-Windows-x64.zip
+
+2026-09-13에 Windows 11 x64(10.0.26200) / Python 3.12.10 / lxml 6.1.3 / pywin32 312 / PyInstaller 6.22.3 환경에서 자동 테스트 **39 passed, 1 skipped**, 소스·패키징 실행 파일 GUI 스모크 테스트를 통과했고 `dist/RENAME-Windows-x64.zip` 로컬 포터블 ZIP도 생성했습니다. Excel 16.0에서 합성 XLSX를 처리·저장·재열기하고 XLS→XLSX 변환 경로를 확인했습니다. 한컴 COM(`HWPFrame.HwpObject`)이 등록되어 있지 않아 실제 HWP 변환과 HWPX 레이아웃은 **미검증**입니다. 기관 실기기·실제 업무 서식 검증은 여전히 필요합니다.
+
+지금 실행하려면 아래의 **소스에서 실행** 절차를 사용하세요. 직접 EXE를 만들려면 `BUILD_WINDOWS.cmd`를 실행합니다. GitHub 반영 상태와 Codex 인수인계는 `docs/GITHUB_UPLOAD.md`, `docs/CODEX_HANDOFF.md`에 있습니다.
 
 ## 가장 쉬운 실행
 
-Windows 빌드가 성공한 경우 이 저장소의 **Releases** 또는 **Actions → Windows portable build → Artifacts**에서 `RENAME-Windows-x64.zip`을 받습니다. 압축을 모두 풀고 `RENAME/RENAME.exe`를 실행합니다. `_internal` 폴더를 함께 유지해야 합니다. 배포본은 Python 설치가 필요하지 않습니다. 로컬에서는 2026-09-13에 `BUILD_WINDOWS.cmd`로 `dist/RENAME-Windows-x64.zip`을 생성했습니다. 릴리스·Actions 업로드는 아직 완료하지 않았습니다.
+가장 안정적인 배포본은 이 저장소 **Releases**의 `RENAME-Windows-x64.zip`입니다. 압축을 모두 풀고 `RENAME/RENAME.exe`를 실행합니다. `_internal` 폴더를 함께 유지해야 합니다. 배포본은 Python 설치가 필요하지 않습니다. Actions 실행 34745009276의 Artifact ID 10313228795도 있으나 **2026-10-13에 만료**되므로 릴리스 URL을 우선 사용하세요. 로컬에서도 2026-09-13에 `BUILD_WINDOWS.cmd`로 `dist/RENAME-Windows-x64.zip`을 생성했습니다(로컬 SHA256 `cc2f9a95c550c0d5eb4bd283118c12f1f1922da12b808a4631958ba86ac28fe5`). 로컬 ZIP과 GitHub 릴리스 ZIP은 **별도 빌드라 해시가 다르므로**, 다운로드한 파일은 릴리스 해시(`d8a5150d…`)로 확인하세요.
 
 Releases: https://github.com/h19h29-design/rename/releases
 
 Actions: https://github.com/h19h29-design/rename/actions
 
-실행 파일은 디지털 서명되지 않은 개인 배포본입니다. 보안 경고가 발생하면 출처·SHA256·기관 정책을 확인하세요. 보안 기능을 해제할 필요는 없습니다.
+실행 파일은 디지털 서명되지 않은 개인 배포본입니다. 보안 경고가 발생하면 출처(릴리스 URL)·SHA256(`SHA256SUMS.txt`의 `d8a5150d…`)·기관 정책을 확인하세요. 보안 기능을 해제할 필요는 없습니다.
 
 ### 소스에서 실행
 
