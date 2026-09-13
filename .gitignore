@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.spec
+.worktrees/
+RENAME_결과/
+.rename-*/
+*.xlsx
+*.xls
+*.hwpx
+*.hwp
+*.log
